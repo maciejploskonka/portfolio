@@ -109,7 +109,7 @@
     grid-template-columns: 1fr;
 
     @include mq {
-      grid-gap: 15px;
+      grid-gap: 10px;
       grid-row-gap: 35px;
       grid-template-areas:
       'bioimg biotext biotext'
