@@ -20,7 +20,7 @@ import image_200 from '../img/image_200.jpg'
   const cookieInfo = document.querySelector('#cookieInfo');
   const scroll = new smoothScroll();
   const links = document.querySelectorAll('.menu__link');
-  let darkTheme = null || JSON.parse(localStorage.getItem('darkTheme'));
+  let lightTheme = null || JSON.parse(localStorage.getItem('lightTheme'));
 
   const onDOMLoad = function() {
     document.addEventListener('DOMContentLoaded', function() {
@@ -28,7 +28,7 @@ import image_200 from '../img/image_200.jpg'
         cookieInfo.classList.add('show');
       }
 
-      if (!darkTheme) {
+      if (lightTheme) {
         body.classList.add('light');
         colorBtn.classList.add('active');
       }
@@ -37,18 +37,19 @@ import image_200 from '../img/image_200.jpg'
       projectsAll[randomNumber].classList.add('featured');
     })
   }
-
+  
   const menuClick = function() {
     menuBtn.addEventListener('click', () => {
       nav.classList.toggle('open');
       menuBtn.classList.toggle('close');
     });
   }
-
+  
   const colorClick = function() {
     colorBtn.addEventListener('click', () => {
       colorBtn.classList.toggle('active');
       body.classList.toggle('light');
+      lightTheme = !lightTheme;
       _saveTheme();
     });
   }
@@ -125,8 +126,7 @@ import image_200 from '../img/image_200.jpg'
   }
 
   const _saveTheme = function() {
-    darkTheme = !darkTheme;
-    localStorage.setItem('darkTheme', JSON.stringify(darkTheme));
+    localStorage.setItem('lightTheme', JSON.stringify(lightTheme));
   }
 
   const _closeMenu = function() {
