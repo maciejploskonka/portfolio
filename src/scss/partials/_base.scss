@@ -114,17 +114,16 @@ body {
   bottom: 0;
   width: 100%;
   background: var(--bg-color-lighten);
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
   @include ease(transform);
-  visibility: hidden;
 
   &__text {
     text-align: center;
     font-size: 0.8rem;
     padding: 0.5rem;
-    padding-right: 1.5rem;
+    padding-right: 2rem;
   }
 
   &__button {
@@ -149,6 +148,6 @@ body {
   }
 
   &.show {
-    visibility: visible;
+    display: flex;
   }
 }
